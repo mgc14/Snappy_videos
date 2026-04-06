@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snappy | Videos Hiperrealistas con IA</title>
+    <style>
+        /* Estilos básicos para que la página se vea moderna y elegante */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000000; /* Fondo negro como tu logo */
+            color: #ffffff; /* Letra blanca */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        /* Aquí puedes poner la ruta de tu logo real que tienes en el Drive */
+        .logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            font-size: 1.2em;
+            color: #cccccc;
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Estilos del formulario de contacto */
+        .form-container {
+            background-color: #111111;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(255,255,255,0.1);
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-container input, 
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #222;
+            color: #fff;
+            box-sizing: border-box;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 15px;
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-container button:hover {
+            background-color: #cccccc;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="Snappy Logo" class="logo" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=SNAPPY'">
+        <h1>Snappy Videos IA</h1>
+        <p class="subtitle">Creamos videos hiperrealistas con Inteligencia Artificial para tu negocio. Rápidos, personalizados y listos para vender.</p>
+    </header>
+
+    <div class="form-container">
+        <form id="whatsappForm">
+            <label for="nombre">Tu Nombre:</label>
+            <input type="text" id="nombre" placeholder="Ej. Carlos Pérez" required>
+
+            <label for="empresa">Nombre de tu Negocio:</label>
+            <input type="text" id="empresa" placeholder="Ej. Restaurante La Estrella" required>
+
+            <label for="mensaje">¿Qué tipo de video necesitas?</label>
+            <textarea id="mensaje" rows="4" placeholder="Cuéntanos sobre tu producto o idea..." required></textarea>
+
+            <button type="button" onclick="enviarWhatsApp()">Enviar mensaje a WhatsApp</button>
+        </form>
+    </div>
+
+    <script>
+        // Esta función toma los datos y crea el enlace de WhatsApp
+        function enviarWhatsApp() {
+            // 1. Obtener los valores que escribió el cliente
+            var nombre = document.getElementById("nombre").value;
+            var empresa = document.getElementById("empresa").value;
+            var mensaje = document.getElementById("mensaje").value;
+
+            // 2. Validar que no estén vacíos
+            if(nombre === "" || empresa === "" || mensaje === "") {
+                alert("Por favor, completa todos los campos para poder atenderte mejor.");
+                return;
+            }
+
+            // 3. Crear el mensaje que te llegará a ti (Julia)
+            var textoMensaje = "¡Hola Julia! Vengo de la página web de Snappy. %0A%0A";
+            textoMensaje += "*Mi nombre es:* " + nombre + "%0A";
+            textoMensaje += "*Mi empresa es:* " + empresa + "%0A";
+            textoMensaje += "*Me interesa un video para:* " + mensaje;
+
+            // 4. Tu número de teléfono (con código de país 52)
+            var numeroTelefono = "525647137565"; 
+
+            // 5. Construir el link final y abrirlo
+            var url = "https://wa.me/" + numeroTelefono + "?text=" + textoMensaje;
+            window.open(url, '_blank'); // Esto abre WhatsApp en una pestaña nueva
+        }
+    </script>
+
+</body>
+</html>
