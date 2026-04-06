@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snappy | AI Visual Alchemy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* Definición de la Paleta: Negro, Blanco y Lila */
         :root {
-            --bg-color: #000000;      
-            --text-main: #FFFFFF;     
-            --accent-color: #C4B5FD;  
-            --accent-hover: #A78BFA; 
-            --card-bg: #0A0A0A;       
-            --border-color: #222222;  
+            --bg-color: #000000;
+            --card-bg: #0A0A0B;
+            --input-bg: #121214;
+            --text-main: #FFFFFF;
+            --accent-lila: #C4B5FD;
+            --accent-deep: #7C3AED;
+            --slate: #64748b;
         }
 
         body {
@@ -26,188 +26,190 @@
             flex-direction: column;
             align-items: center;
             overflow-x: hidden;
-            line-height: 1.6;
         }
 
         /* --- HEADER --- */
         header {
-            padding: 80px 20px 50px;
+            padding: 60px 20px;
             text-align: center;
             width: 100%;
-            box-sizing: border-box;
+        }
+
+        .logo-container {
+            display: inline-block;
+            padding: 15px;
+            border-radius: 20px;
+            background: rgba(196, 181, 253, 0.05);
+            border: 1px solid rgba(196, 181, 253, 0.1);
+            margin-bottom: 20px;
         }
 
         .logo {
-            width: 90px;
-            filter: drop-shadow(0 0 15px rgba(196, 181, 253, 0.3)); 
-            margin-bottom: 25px;
+            width: 120px; /* Ajustado para que luzca imponente */
+            display: block;
+            filter: drop-shadow(0 0 15px rgba(196, 181, 253, 0.5));
         }
 
         h1 {
             font-size: 3.5rem;
             font-weight: 800;
             letter-spacing: -3px;
-            text-transform: uppercase;
             margin: 0;
-            background: linear-gradient(180deg, #FFFFFF 0%, #C4B5FD 100%);
+            background: linear-gradient(to bottom, #FFF 40%, var(--accent-lila) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* --- MISIÓN --- */
-        .mission-section {
-            max-width: 800px;
-            padding: 60px 20px;
+        /* --- SECCIÓN: MISIÓN --- */
+        .hero-section {
+            padding: 40px 20px 80px;
             text-align: center;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            background: radial-gradient(circle at center, #0A0A0A 0%, #000000 100%);
-            width: 100%;
-        }
-
-        .mission-tag {
-            background: #111;
-            color: var(--accent-color);
-            padding: 6px 18px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 30px;
-            display: inline-block;
-            border: 1px solid #222;
+            max-width: 800px;
         }
 
         .mission-text {
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: #FFFFFF;
-            letter-spacing: -0.5px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .mission-text span {
-            color: #888; 
+            font-size: 1.4rem;
+            line-height: 1.5;
+            color: var(--slate);
             font-weight: 400;
         }
 
-        /* --- PORTAFOLIO TIKTOK AUTOMATIZADO --- */
-        .portfolio-section {
-            width: 100%;
+        .mission-text strong { color: #FFF; font-weight: 600; }
+
+        /* --- SECCIÓN: POR QUÉ SNAPPY --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
             max-width: 1000px;
-            padding: 80px 20px;
-            text-align: center;
-            box-sizing: border-box;
+            width: 100%;
+            padding: 40px 20px;
         }
 
-        .section-title {
-            font-size: 0.9rem;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 40px;
-        }
-
-        .tiktok-feed-container {
+        .feature-card {
             background: var(--card-bg);
+            padding: 30px;
             border-radius: 20px;
-            padding: 20px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 10px 30px rgba(196, 181, 253, 0.05);
-            display: flex;
-            justify-content: center;
+            border: 1px solid #1A1A1A;
+            text-align: left;
         }
 
-        /* --- FORMULARIO DE CONVERSIÓN --- */
-        .cta-section {
+        .feature-card h3 { color: var(--accent-lila); margin-top: 0; font-size: 1.1rem; letter-spacing: 1px; }
+        .feature-card p { color: var(--slate); font-size: 0.9rem; margin-bottom: 0; }
+
+        /* --- SECCIÓN: PORTAFOLIO --- */
+        .work-section {
+            padding: 80px 20px;
+            width: 100%;
+            text-align: center;
+            background: #030303;
+        }
+
+        .section-tag {
+            color: var(--accent-lila);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 0.75rem;
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        .tiktok-container {
+            max-width: 780px;
+            margin: 0 auto;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 1px solid #222;
+        }
+
+        /* --- SECCIÓN: FORMULARIO --- */
+        .form-section {
+            padding: 100px 20px;
             width: 100%;
             display: flex;
             justify-content: center;
-            padding: 80px 20px;
-            background-color: #050505;
-            border-top: 1px solid var(--border-color);
-            box-sizing: border-box;
         }
 
         .form-card {
             background: var(--card-bg);
             padding: 50px;
-            border-radius: 24px;
-            border: 1px solid var(--border-color);
+            border-radius: 35px;
             width: 100%;
-            max-width: 500px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            text-align: left;
+            max-width: 550px;
+            border: 1px solid #1A1A1A;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.9);
         }
 
-        .form-card h2 {
-            font-size: 2rem;
-            margin-top: 0;
-            color: #FFFFFF;
-            letter-spacing: -1px;
+        .form-card h2 { font-size: 2.2rem; margin-top: 0; }
+        .form-subtitle { color: var(--slate); margin-bottom: 40px; font-size: 1rem; }
+
+        label {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--accent-lila);
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        .form-card p {
-            color: #888;
-            margin-bottom: 35px;
-            font-size: 1.1rem;
-        }
-
-        input, textarea {
+        input, textarea, select {
             width: 100%;
-            background: #000;
+            background: var(--input-bg);
             border: 1px solid #222;
-            padding: 18px;
-            margin-bottom: 20px;
+            padding: 16px;
+            margin-bottom: 25px;
             border-radius: 12px;
             color: white;
-            font-size: 1rem;
-            box-sizing: border-box;
             font-family: inherit;
-            transition: all 0.2s;
+            font-size: 0.95rem;
+            box-sizing: border-box;
         }
 
-        input:focus, textarea:focus {
+        input:focus, textarea:focus, select:focus {
             outline: none;
-            border-color: var(--accent-color);
-            background: #050505;
+            border-color: var(--accent-lila);
         }
 
-        .btn-whatsapp {
+        /* Checkbox Styling */
+        .investment-check {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: rgba(196, 181, 253, 0.05);
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .investment-check input { width: auto; margin: 0; accent-color: var(--accent-lila); }
+        .investment-check span { font-size: 0.9rem; color: #BBB; }
+
+        .btn-submit {
             width: 100%;
             padding: 20px;
-            background-color: var(--accent-color);
-            color: #000000;
+            background: var(--text-main);
+            color: black;
             border: none;
             border-radius: 12px;
             font-weight: 800;
-            font-size: 1.1rem;
+            font-size: 1rem;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: all 0.3s ease;
+            transition: 0.3s;
         }
 
-        .btn-whatsapp:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
+        .btn-submit:hover {
+            background: var(--accent-lila);
+            transform: scale(1.02);
         }
 
-        /* --- FOOTER --- */
-        footer {
-            padding: 50px 20px;
-            color: #444;
-            font-size: 0.85rem;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            width: 100%;
-            box-sizing: border-box;
-        }
+        footer { padding: 40px; color: #222; font-size: 0.7rem; text-align: center; }
 
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
-            .mission-text { font-size: 1.25rem; }
             .form-card { padding: 30px; }
         }
     </style>
@@ -215,67 +217,104 @@
 <body>
 
     <header>
-        <img src="logo.png" alt="Snappy" class="logo" onerror="this.src='https://via.placeholder.com/90/000000/FFFFFF?text=S'">
+        <div class="logo-container">
+            <img src="logo.png" class="logo" alt="Snappy Logo" onerror="this.src='https://via.placeholder.com/120/000000/FFFFFF?text=SNAPPY'">
+        </div>
         <h1>Snappy</h1>
     </header>
 
-    <section class="mission-section">
-        <div class="mission-tag">AI Visual Alchemy</div>
+    <section class="hero-section">
         <p class="mission-text">
-            Hackeamos la percepción visual de tu marca. <span>Utilizamos IA de élite para encarecer tus productos, beneficiando la rentabilidad de tu empresa a través de contenido hiperrealista que posiciona a tu negocio en el sector premium.</span>
+            Nuestra misión es <strong>hackear la percepción visual</strong> de tu marca. Utilizamos IA de élite para encarecer tus productos a través de contenido cinematográfico que te posiciona en el <strong>sector premium</strong>.
         </p>
     </section>
 
-    <section class="portfolio-section">
-        <h3 class="section-title">Showcase // High-End Content</h3>
-        <div class="tiktok-feed-container">
-            
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@snappy_videosai" data-unique-id="snappy_videosai" data-embed-type="creator" style="max-width: 780px; min-width: 288px;" > 
-                <section> 
-                    <a target="_blank" href="https://www.tiktok.com/@snappy_videosai?refer=creator_embed">@snappy_videosai</a> 
-                </section> 
-            </blockquote> 
+    <div class="features-grid">
+        <div class="feature-card">
+            <h3>HIPERREALISMO</h3>
+            <p>Generamos texturas y luces que desafían la realidad para que tu producto luzca impecable.</p>
+        </div>
+        <div class="feature-card">
+            <h3>CELERIDAD IA</h3>
+            <p>Producciones de alta gama listas en tiempo récord, optimizando tu lanzamiento al mercado.</p>
+        </div>
+        <div class="feature-card">
+            <h3>RENTABILIDAD</h3>
+            <p>Elevamos el valor percibido, permitiéndote posicionar precios más altos y captar mejores clientes.</p>
+        </div>
+    </div>
 
+    <section class="work-section">
+        <span class="section-tag">Showcase / Portafolio Activo</span>
+        <div class="tiktok-container">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@snappy_videosai" data-unique-id="snappy_videosai" data-embed-type="creator" style="max-width: 780px;">
+                <section> <a target="_blank" href="https://www.tiktok.com/@snappy_videosai?refer=creator_embed">@snappy_videosai</a> </section>
+            </blockquote>
         </div>
     </section>
 
-    <section class="cta-section">
+    <section class="form-section">
         <div class="form-card">
-            <h2>Elevemos tu marca.</h2>
-            <p>Cuéntame sobre tu proyecto y te enviaré una propuesta cinematográfica de impacto.</p>
-            
+            <h2>Hagámoslo real.</h2>
+            <p class="form-subtitle">Brief de producción cinematográfica con IA.</p>
+
             <form id="snappyForm">
+                <label>Datos de Marca</label>
                 <input type="text" id="nombre" placeholder="Tu nombre" required>
-                <input type="text" id="negocio" placeholder="Nombre de tu negocio" required>
-                <textarea id="idea" rows="4" placeholder="¿Qué producto vamos a posicionar hoy?" required></textarea>
-                
-                <button type="button" class="btn-whatsapp" onclick="enviarMensajeAJulia()">INICIAR PROYECTO</button>
+                <input type="text" id="negocio" placeholder="Nombre de tu empresa" required>
+
+                <label>Objetivo de Producción</label>
+                <select id="paquete">
+                    <option value="1 Video (10-15s)">1 Video Impacto (10-15 seg)</option>
+                    <option value="1 Video (15-30s)">1 Video Narrativo (15-30 seg)</option>
+                    <option value="PAQUETE: 4 Videos (10-15s)">Paquete Elite: 4 Videos (10-15 seg c/u)</option>
+                    <option value="Campaña (+2 productos)">Campaña Multiproducto (+2 productos)</option>
+                </select>
+
+                <label>Dirección Creativa</label>
+                <textarea id="idea" rows="3" placeholder="¿Qué quieres que el espectador vea?" required></textarea>
+                <textarea id="texto" rows="2" placeholder="¿Qué debe decir el video o qué textos lleva?" required></textarea>
+
+                <label class="investment-check">
+                    <input type="checkbox" id="invertir" required>
+                    <span>Estoy dispuesto a invertir en publicidad para escalar mi empresa.</span>
+                </label>
+
+                <button type="button" class="btn-submit" onclick="enviarWhatsApp()">Enviar Brief a Julia</button>
             </form>
         </div>
     </section>
 
-    <footer>&copy; 2026 SNAPPY AI LABS. All rights reserved. Elevating brands since the future.</footer>
+    <footer>&copy; 2026 SNAPPY AI LABS. Elevating Brand Perceptions.</footer>
 
     <script async src="https://www.tiktok.com/embed.js"></script>
 
     <script>
-        function enviarMensajeAJulia() {
-            const nombre = document.getElementById('nombre').value;
-            const negocio = document.getElementById('negocio').value;
-            const idea = document.getElementById('idea').value;
-
-            if(!nombre || !negocio || !idea) {
-                alert("Por favor, llena todos los campos para poder preparar tu propuesta.");
+        function enviarWhatsApp() {
+            const checkInvertir = document.getElementById('invertir').checked;
+            
+            if(!checkInvertir) {
+                alert("Para trabajar con Snappy, es necesario confirmar tu disposición para invertir en tu marca.");
                 return;
             }
 
-            const mensajeEncoded = encodeURIComponent(
-                `¡Hola Julia! ✨ Soy ${nombre} de ${negocio}. Vi la web de Snappy y quiero elevar el valor percibido de mis productos con IA.\n\n` +
-                `Mi idea es hacer un video para: ${idea}`
-            );
-            
-            const urlWhatsApp = `https://wa.me/525647137565?text=${mensajeEncoded}`;
-            window.open(urlWhatsApp, '_blank');
+            const data = {
+                n: document.getElementById('nombre').value,
+                b: document.getElementById('negocio').value,
+                p: document.getElementById('paquete').value,
+                i: document.getElementById('idea').value,
+                t: document.getElementById('texto').value
+            };
+
+            if(!data.n || !data.i) { alert("Completa los campos para continuar."); return; }
+
+            const msj = `¡Hola Julia! ✨ Soy ${data.n} de ${data.b}.\n\n` +
+                `*Interés:* ${data.p}\n` +
+                `*Mindset:* Dispuesto a invertir en publicidad.\n\n` +
+                `*Idea Visual:* ${data.i}\n` +
+                `*Guion/Texto:* ${data.t}`;
+
+            window.open(`https://wa.me/525647137565?text=${encodeURIComponent(msj)}`, '_blank');
         }
     </script>
 </body>
